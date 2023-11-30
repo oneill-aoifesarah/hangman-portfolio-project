@@ -82,3 +82,11 @@ def display_hangman(attempts):
         """
     ]
     return hangman_stages[attempts]
+
+
+def print_game_state(attempts, word_completion):
+    """
+    Print the current game state (hangman and word completion).
+    """
+    print(display_hangman(attempts))
+    print("Current Word:", word_completion, "\n")
