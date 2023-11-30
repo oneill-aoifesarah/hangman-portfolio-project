@@ -115,3 +115,7 @@ def play(word, player_name):
     print("1. You need to guess the hidden word.")
     print("2. You can guess a letter at a time or the entire word.")
     print("3. You have 6 attempts to guess the word correctly.")
+
+    while not guessed and attempts > 0:
+        print_game_state(attempts, word_completion)
+        guess = input("Please guess a letter or the entire word: ").upper()
