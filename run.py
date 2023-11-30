@@ -92,7 +92,7 @@ def print_game_state(attempts, word_completion):
     print("Current Word:", word_completion, "\n")
 
 
-def play(word):
+def play(word, player_name):
     """
     Main game-playing function.
     """
@@ -101,3 +101,17 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     attempts = 6
+
+    ready_to_play = input(
+     f"Hello, {player_name}! Are you ready to play Hangman? (Y/N): "
+    ).upper()
+
+    if ready_to_play != "Y":
+        print("Maybe next time. Goodbye!")
+        return
+
+    print(f"Great, {player_name}! Let's play Hangman!")
+    print("Here are the rules:")
+    print("1. You need to guess the hidden word.")
+    print("2. You can guess a letter at a time or the entire word.")
+    print("3. You have 6 attempts to guess the word correctly.")
