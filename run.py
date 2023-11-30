@@ -189,3 +189,19 @@ def play(word, player_name):
 
     if not guessed:
         print(f"Sorry, {player_name}, no attempts left. The word was {word}.")
+
+
+def main():
+    """
+    Main function to start the game, including loop for replay.
+    """
+    while True:
+        player_name = input("Enter your name: ")
+        difficulty = input("Choose difficulty (easy, medium, hard): ").lower()
+
+        if difficulty not in ['easy', 'medium', 'hard']:
+            print("Invalid difficulty. Please choose easy,medium,or hard.")
+            return
+
+        word = get_word(difficulty)
+        play(word, player_name)
