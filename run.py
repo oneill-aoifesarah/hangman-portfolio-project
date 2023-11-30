@@ -112,6 +112,22 @@ def handle_letter_guess(
     return word_completion, attempts
 
 
+def handle_word_guess(guess, word, guessed_words, attempts):
+    """
+    Handle a word guess.
+    """
+    if guess in guessed_words:
+        print("You already tried the word", guess)
+    elif guess != word:
+        print("Sorry, the word is not", guess + ".")
+        attempts -= 1
+        guessed_words.append(guess)
+    else:
+        print("Congratulations! You guessed the word correctly! You win!")
+
+    return attempts
+
+
 def play(word, player_name):
     """
     Main game-playing function
