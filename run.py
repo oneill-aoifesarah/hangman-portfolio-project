@@ -86,15 +86,35 @@ def display_hangman(attempts):
 
 def print_game_state(attempts, word_completion):
     """
-    Print the current game state (hangman and word completion).
+    Print the current game state (hangman and word completion)
     """
     print(display_hangman(attempts))
     print("Current Word:", word_completion, "\n")
 
 
+def handle_letter_guess(
+    guess, word, word_completion, guessed_letters, attempts
+):
+    """
+    Handle a letter guess.
+    """
+    if guess in guessed_letters:
+        print("You already tried that letter", guess)
+    elif guess not in word:
+        print(guess, "isn't in the word.")
+        attempts -= 1
+        guessed_letters.append(guess)
+    else:
+        print("Well done! The letter", guess, "is in the word!")
+        guessed_letters.append(guess)
+        word_completion = update_word_completion(guess, word, word_completion)
+
+    return word_completion, attempts
+
+
 def play(word, player_name):
     """
-    Main game-playing function.
+    Main game-playing function
     """
     word_completion = " ".join(["_" for _ in word])
     guessed = False
