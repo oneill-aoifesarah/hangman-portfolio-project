@@ -193,7 +193,7 @@ def play(word, player_name):
 
 def main():
     """
-    Main function to start the game, including loop for replay.
+    Main function to start the game, including loop for multiple games.
     """
     while True:
         player_name = input("Enter your name: ")
@@ -205,3 +205,8 @@ def main():
 
         word = get_word(difficulty)
         play(word, player_name)
+
+        play_again = input("Do you want to play again? (y/n): ").lower()
+        if play_again != 'y':
+            print(f"Thanks for playing, {player_name}! Goodbye!")
+            break
