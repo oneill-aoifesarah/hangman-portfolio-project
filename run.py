@@ -15,3 +15,5 @@ def get_word(difficulty):
         return random.choice(word_list_medium).upper()
     elif difficulty == 'hard':
         return random.choice(word_list_hard).upper()
+    else:
+        raise ValueError("Invalid difficulty level")
