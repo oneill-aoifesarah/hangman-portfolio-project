@@ -90,3 +90,14 @@ def print_game_state(attempts, word_completion):
     """
     print(display_hangman(attempts))
     print("Current Word:", word_completion, "\n")
+
+
+def play(word):
+    """
+    Main game-playing function.
+    """
+    word_completion = " ".join(["_" for _ in word])
+    guessed = False
+    guessed_letters = []
+    guessed_words = []
+    attempts = 6
