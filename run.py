@@ -112,6 +112,27 @@ def handle_letter_guess(
     return word_completion, attempts
 
 
+def update_word_completion(guess, word, word_completion):
+    """
+    Update the word completion based on a correct letter guess.
+    """
+    word_as_list = list(word_completion.replace(" ", ""))
+    indices = [i for i, letter in enumerate(word) if letter == guess]
+    for index in indices:
+        word_as_list[index] = guess
+    updated_completion = " ".join(word_as_list)
+
+    for i, char in enumerate(word_completion):
+        if char.isspace():
+            updated_completion = (
+                updated_completion[:i] +
+                char +
+                updated_completion[i + 1:]
+            )
+
+    return updated_completion
+
+
 def handle_word_guess(guess, word, guessed_words, attempts):
     """
     Handle a word guess
