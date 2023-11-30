@@ -160,3 +160,11 @@ def play(word, player_name):
             word_completion, attempts = handle_letter_guess(
                 guess, word, word_completion, guessed_letters, attempts
             )
+        elif len(guess) == len(word) and guess.isalpha():
+            attempts = handle_word_guess(guess, word, guessed_words, attempts)
+            guessed = True if attempts > 0 else False
+        else:
+            print("Invalid input. Please enter a valid letter or word.")
+
+    if not guessed:
+        print(f"Sorry, {player_name}, no attempts left. The word was {word}.")
