@@ -206,7 +206,7 @@ def main():
         word = get_word(difficulty)
         play(word, player_name)
 
-        play_again = input("Do you want to play again? (y/n): ").lower()
+        play_again = input("Do you want to play again? (Y/N): ").lower()
         if play_again != 'y':
             print(f"Thanks for playing, {player_name}! Goodbye!")
             break
