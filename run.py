@@ -176,7 +176,7 @@ def play(word, player_name):
     ).upper()
 
     if ready_to_play != "Y":
-        print("Maybe next time. Goodbye!")
+        print("Maybe next time.")
         return
 
     print(f"Great, {player_name}! Let's play Hangman!")
@@ -200,7 +200,7 @@ def play(word, player_name):
             print("Invalid input. Please enter a valid letter or word.")
 
     if guessed:
-        print(f"Well done, {player_name}! The word is: {word}")
+        print(f"The word is: {word}")
     else:
         print_game_state(attempts, word_completion)
         print(f"Sorry, {player_name}, no attempts left. The word was {word}.")
