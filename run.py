@@ -1,3 +1,6 @@
+"""
+Import from words.py
+"""
 import random
 from words import word_list_easy, word_list_medium, word_list_hard
 
@@ -93,8 +96,14 @@ def handle_letter_guess(
     guess, word, word_completion, guessed_letters, attempts
 ):
     """
-    Handle a letter guess.
+    Handle a letter guess. Add input validation
     """
+    if not guess or not guess.isalpha():
+        print("Invalid input. Please enter a valid letter.")
+        return word_completion, attempts
+
+    guess = guess.upper()
+
     if guess in guessed_letters:
         print("You already tried the letter", guess)
     elif guess not in word:
@@ -132,8 +141,14 @@ def update_word_completion(guess, word, word_completion):
 
 def handle_word_guess(guess, word, guessed_words, attempts):
     """
-    Handle a word guess
+    Handle a word guess and app input validation
     """
+    if not guess or not guess.isalpha():
+        print("Invalid input. Please enter a valid word.")
+        return attempts
+
+    guess = guess.upper()
+
     if guess in guessed_words:
         print("You already tried the word", guess)
     elif guess != word:
@@ -141,7 +156,7 @@ def handle_word_guess(guess, word, guessed_words, attempts):
         attempts -= 1
         guessed_words.append(guess)
     else:
-        print("Congratulations! You guessed the word correctly! You win!")
+        print("Congratulations! You guessed the word correctly!")
 
     return attempts
 
