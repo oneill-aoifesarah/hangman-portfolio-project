@@ -20,7 +20,7 @@ def get_word(difficulty):
     elif difficulty == 'hard':
         return random.choice(word_list_hard).upper()
     else:
-        raise ValueError("Invalid difficulty level. Please choose again.")
+        raise ValueError("Invalid entry. Try again")
 
 
 def display_hangman(attempts):
@@ -145,7 +145,7 @@ def update_word_completion(guess, word, word_completion):
 
 def handle_word_guess(guess, word, guessed_words, attempts):
     """
-    Handle a word guess and app input validation.
+    Handle a word guess. Add input validation.
     """
     if not guess.isalpha():
         print("Invalid input. Please enter a valid word.")
