@@ -99,7 +99,7 @@ def handle_letter_guess(
     Handle a letter guess.
     """
     if guess in guessed_letters:
-        print("You already tried that letter", guess)
+        print("You already tried the letter", guess)
     elif guess not in word:
         print(guess, "isn't in the word.")
         attempts -= 1
