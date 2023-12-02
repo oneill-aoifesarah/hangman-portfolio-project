@@ -1,6 +1,3 @@
-"""
-Randomize and import word list
-"""
 import random
 from words import word_list_easy, word_list_medium, word_list_hard
 
@@ -183,15 +180,14 @@ def play(word, player_name):
             )
         elif len(guess) == len(word) and guess.isalpha():
             attempts = handle_word_guess(guess, word, guessed_words, attempts)
-            guessed = True if attempts > 0 else False
+            guessed = True
         else:
             print("Invalid input. Please enter a valid letter or word.")
-    """
-    Display the final state of the hangman after game completion
-    """
-    print_game_state(attempts, word_completion)
 
-    if not guessed:
+    if guessed:
+        print(f"Well done, {player_name}! The word is: {word}")
+    else:
+        print_game_state(attempts, word_completion)
         print(f"Sorry, {player_name}, no attempts left. The word was {word}.")
 
 
@@ -216,4 +212,5 @@ def main():
             break
 
 
-main()
+if __name__ == "__main__":
+    main()
