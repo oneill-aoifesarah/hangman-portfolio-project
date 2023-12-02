@@ -210,3 +210,6 @@ def main():
         if play_again != 'y':
             print(f"Thanks for playing, {player_name}! Goodbye!")
             break
+
+
+main()
