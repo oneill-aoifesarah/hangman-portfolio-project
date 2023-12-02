@@ -7,8 +7,12 @@ from words import word_list_easy, word_list_medium, word_list_hard
 
 def get_word(difficulty):
     """
-    Get a random word based on the difficulty level
+    Get a random word based on the difficulty level.
+    This function takes a difficulty level and returns
+    a randomly selected word corresponding to that difficulty level.
+    If the difficulty level is not valid, it raises a ValueError.
     """
+    difficulty = difficulty.lower()
     if difficulty == 'easy':
         return random.choice(word_list_easy).upper()
     elif difficulty == 'medium':
@@ -16,12 +20,12 @@ def get_word(difficulty):
     elif difficulty == 'hard':
         return random.choice(word_list_hard).upper()
     else:
-        raise ValueError("Invalid difficulty level")
+        raise ValueError("Invalid difficulty level. Please choose again.")
 
 
 def display_hangman(attempts):
     """
-    Display the hangman in six stages based on the number of incorrect attempts
+    Display the hangman in six stages based on the number of attempts.
     """
     hangman_stages = [
         """
@@ -86,7 +90,7 @@ def display_hangman(attempts):
 
 def print_game_state(attempts, word_completion):
     """
-    Print the current game state (hangman and word completion)
+    Print the current game state (hangman and word completion).
     """
     print(display_hangman(attempts))
     print("Current Word:", word_completion, "\n")
@@ -96,9 +100,9 @@ def handle_letter_guess(
     guess, word, word_completion, guessed_letters, attempts
 ):
     """
-    Handle a letter guess. Add input validation
+    Handle a letter guess. Add input validation.
     """
-    if not guess or not guess.isalpha():
+    if not guess.isalpha():
         print("Invalid input. Please enter a valid letter.")
         return word_completion, attempts
 
@@ -141,9 +145,9 @@ def update_word_completion(guess, word, word_completion):
 
 def handle_word_guess(guess, word, guessed_words, attempts):
     """
-    Handle a word guess and app input validation
+    Handle a word guess and app input validation.
     """
-    if not guess or not guess.isalpha():
+    if not guess.isalpha():
         print("Invalid input. Please enter a valid word.")
         return attempts
 
@@ -163,7 +167,7 @@ def handle_word_guess(guess, word, guessed_words, attempts):
 
 def play(word, player_name):
     """
-    Main game-playing function
+    Main game-playing function.
     """
     word_completion = " ".join(["_" for _ in word])
     guessed = False
@@ -214,11 +218,12 @@ def main():
         player_name = input("Enter your name: ")
         difficulty = input("Choose difficulty (easy, medium, hard): ").lower()
 
-        if difficulty not in ['easy', 'medium', 'hard']:
-            print("Invalid selection. Please try again.")
+        try:
+            word = get_word(difficulty)
+        except ValueError as e:
+            print(e)
             continue
 
-        word = get_word(difficulty)
         play(word, player_name)
 
         play_again = input("Do you want to play again? (Y/N): ").lower()
@@ -227,5 +232,8 @@ def main():
             break
 
 
+"""
+Call main function when script is running
+"""
 if __name__ == "__main__":
     main()
