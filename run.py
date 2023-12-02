@@ -186,6 +186,10 @@ def play(word, player_name):
             guessed = True if attempts > 0 else False
         else:
             print("Invalid input. Please enter a valid letter or word.")
+    """
+    Display the final state of the hangman after game completion
+    """
+    print_game_state(attempts, word_completion)
 
     if not guessed:
         print(f"Sorry, {player_name}, no attempts left. The word was {word}.")
