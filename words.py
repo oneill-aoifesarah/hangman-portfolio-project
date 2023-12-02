@@ -1,4 +1,6 @@
-# Easy Words
+"""
+Pull from list of easy words
+"""
 word_list_easy = [
     "dog", "cat", "sun", "hat", "run",
     "cup", "bed", "top", "pen", "key",
@@ -8,7 +10,9 @@ word_list_easy = [
     "bat", "bus", "leg", "hut", "pan"
 ]
 
-# Medium Words
+"""
+Pull from list of medium words
+"""
 word_list_medium = [
     "tiger", "river", "apple", "dance", "chair",
     "cloud", "guitar", "happy", "movie", "ocean",
@@ -18,7 +22,9 @@ word_list_medium = [
     "dance", "chair", "cloud", "guitar", "happy"
 ]
 
-# Hard Words
+"""
+Pull from list of hard words
+"""
 word_list_hard = [
     "symphony", "quantum", "zephyr", "epiphany", "kaleidoscope",
     "exquisite", "phosphorescent", "byzantine", "pizzazz", "quixotic",
