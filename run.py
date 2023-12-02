@@ -200,8 +200,8 @@ def main():
         difficulty = input("Choose difficulty (easy, medium, hard): ").lower()
 
         if difficulty not in ['easy', 'medium', 'hard']:
-            print("Invalid difficulty. Please choose easy,medium,or hard.")
-            return
+            print("Invalid difficulty. Please try again.")
+            continue
 
         word = get_word(difficulty)
         play(word, player_name)
