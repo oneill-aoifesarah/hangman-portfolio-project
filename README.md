@@ -79,7 +79,7 @@ Throughout the process of making this project, I decided to add some features wh
 - Originally, I intended to have a simple overview of the Hangman game.
 - Originally, I also hadn't accounted for the displaying of letters which had been already guessed
 
-As I navigated this project, I noted the importance of including these features as an intrinsic part of building a more responsive, fully rounded Hangman game which would ensure the game was more responsive to users needs and their overall experience. As such, I adapted the inital overview message to include a sequenced list of rules to guide the user through how to play the Hangman game, and the conditions attached to the maximum attempts available. Further more, I adapted my code to ensure that letters already guessed by the user were displayed with a print message guiding the user on the same and ensuring they could guess an alternative letter. 
+As I navigated this project, I noted the importance of including these features as an intrinsic part of building a more responsive, fully rounded Hangman game which would ensure the game was more responsive to users needs and their overall experience. As such, I adapted the initial overview message to include a sequenced list of rules to guide the user through how to play the Hangman game, and the conditions attached to the maximum attempts available. Further more, I adapted my code to ensure that letters already guessed by the user were displayed with a print message guiding the user on the same and ensuring they could guess an alternative letter. 
 
 Go back to [Table of contents](#table-of-contents) 
 
@@ -96,11 +96,11 @@ Go back to [Table of contents](#table-of-contents)
 <img src="images/ready-to-play.png" alt="Screenshot of ready to play question">
 
 ### Instructions and Game
-- The instructions page explains to the user how the game is played and then initiates display of the inital game state. The inital hangman state shows the player the lenght of the word they are guessing and asks them to enter a letter or guess a word
-<img src="images/hangman-rules-and-initial-hangman-state.png" alt="Screenshot of instructions page and inital hangman">
+- The instructions page explains to the user how the game is played and then initiates display of the initial game state. The initial hangman state shows the player the length of the word they are guessing and asks them to enter a letter or guess a word
+<img src="images/hangman-rules-and-initial-hangman-state.png" alt="Screenshot of instructions page and initial hangman">
 
 ### Game Play
-- While the user is playing the game page, the Hangman game returns messages for letters which are incorrectly guessed, correctly guessed,and letters which have already been guessed. The assoicated letter will be clearly reflected in the message to the player, along with the current state of the hangman
+- While the user is playing the game page, the Hangman game returns messages for letters which are incorrectly guessed, correctly guessed,and letters which have already been guessed. The associated letter will be clearly reflected in the message to the player, along with the current state of the hangman
 <img src="images/hangman-state-wrong-letter-guess.png" alt="Screenshot of incorrect letter guess">
 <img src="images/hangman-state-correct-letter-guess.png" alt="Screenshot of correct letter guess">
 <img src="images/hangman-state-letter-already-guessed.png" alt="Screenshot of letter already guessed">
@@ -159,7 +159,7 @@ To manually test my Hangman game, I completed the following steps:
 - Guess letters one by one and check if the game correctly updates the word completion and displays the hangman stages. Test both correct and incorrect guesses.
 
 6. Word Completion Update:
--vSpecifically, test the update_word_completion function by manually updating the word completion with various correct letter guesses.
+-Specifically, test the update_word_completion function by manually updating the word completion with various correct letter guesses.
 
 7. Hangman Stages Display:
 - Check that the hangman stages are displayed correctly based on the number of incorrect attempts.
@@ -246,7 +246,7 @@ There were many steps to deploying this project to Heroku:
 10. Once this is selected, I then searched for my github repository name, and connected to the correct repository.
 11. Then I scrolled down, here there were two options.
  - The first option being to enable automatic deployment, which means that Heroku will rebuild the app every time I pushed a change to github.
- - The other option being to manually deploy, which is the choice I went for initally, however automatic deployments were selected following this to make it easier.
+ - The other option being to manually deploy, which is the choice I went for initially, however automatic deployments were selected following this to make it easier.
 12. When all the code is received from github there is a view button that it a link to the running app, I clicked this to make sure everything was running as expected.
 
 Go back to [Table of contents](#table-of-contents)
