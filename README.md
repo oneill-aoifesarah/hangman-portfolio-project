@@ -125,7 +125,7 @@ Go back to [Table of contents](#table-of-contents)
 2. An invalid input entry, that other than a letter or letters, will print a message and ask the user to try again
 <img src="images/invalid-guess-entry.png" alt="Screenshot of invalid input entry">
 
-2. An incorrect word guess will print a message and invite the user to play again
+3. An incorrect word guess will print a message and invite the user to play again
 <img src="images/incorrect-word-guess.png" alt="Screenshot of incorrect word guess">
 
 Go back to [Table of contents](#table-of-contents)
